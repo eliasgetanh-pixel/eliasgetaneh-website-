@@ -27,4 +27,163 @@
   border:1px solid rgba(255,255,255,.08);
   border-radius:15px;
   box-shadow:0 8px 32px rgba(0,0,0,.25);
+}/* ==========================================================
+   ELIAS GETANEH PORTFOLIO — 2026 UPGRADE LAYER
+   Loaded after style.css so it only enhances the existing site.
+   ========================================================== */
+
+html{scroll-padding-top:86px}
+body{overflow-x:hidden}
+
+/* Navigation: keep the extra sections comfortable on desktop */
+.navlinks{gap:18px}
+.navlinks a{position:relative;transition:color .2s ease}
+.navlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.navlinks a:hover::after{transform:scaleX(1)}
+
+/* Print / PDF action in About */
+.print-link{border:0;background:transparent;padding:0;cursor:pointer;margin-left:18px}
+.print-link:hover{opacity:.78}
+
+/* ---------------- EXPERIENCE ---------------- */
+.experience-section{position:relative}
+.experience-heading{margin-top:18px}
+.experience-timeline{display:grid;gap:0;border-top:1px solid var(--line);margin-top:34px}
+.experience-item{display:grid;grid-template-columns:92px 1fr;gap:28px;padding:31px 0;border-bottom:1px solid var(--line);position:relative;transition:padding .22s ease,background .22s ease}
+.experience-item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .25s ease}
+.experience-item:hover{padding-left:20px;background:linear-gradient(90deg,rgba(234,193,139,.07),transparent 55%)}
+.experience-item:hover::before{transform:scaleY(1)}
+.experience-number{font:900 34px 'Outfit',sans-serif;letter-spacing:-1px;color:var(--gold);opacity:.62}
+.experience-meta{display:block;margin-bottom:6px;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.experience-item h3{font:800 25px 'Outfit',sans-serif;margin:0 0 9px;color:var(--text)}
+.experience-item p{max-width:760px;margin:0;color:var(--muted);line-height:1.8;font-size:14px}
+
+/* ---------------- SKILLS ---------------- */
+.skills-section{position:relative;background:var(--surface);overflow:hidden}
+.skills-section::before{content:"";position:absolute;width:420px;height:420px;border:1px solid var(--line);border-radius:50%;right:-180px;top:-160px;box-shadow:0 0 0 75px rgba(234,193,139,.018),0 0 0 150px rgba(234,193,139,.012);pointer-events:none}
+.skills-panel{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:24px 42px;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:36px;box-shadow:0 18px 50px rgba(0,0,0,.14)}
+.skill-row{display:grid;gap:10px}
+.skill-label{display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:13px;font-weight:800;color:var(--text)}
+.skill-label svg{color:var(--gold)}
+.skill-track{height:9px;border-radius:999px;background:rgba(148,163,182,.14);overflow:hidden;border:1px solid var(--line)}
+.skill-track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--gold),#f6deaf);box-shadow:0 0 20px rgba(234,193,139,.18);animation:skillGrow .9s ease both;transform-origin:left}
+.skills-note{position:relative;margin:14px 0 0;color:var(--muted);font-size:10px;letter-spacing:.2px}
+@keyframes skillGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ---------------- EXISTING CARDS: subtle modernization ---------------- */
+.service-card,.contact-card,.map-link,.about-photo,.skills-panel{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.contact-card:hover,.map-link:hover{border-color:rgba(234,193,139,.52);box-shadow:0 16px 40px rgba(0,0,0,.17)}
+.map-link:hover{transform:translateY(-3px)}
+.contact-action{transition:color .2s ease,padding-left .2s ease}
+.contact-action:hover{color:var(--gold);padding-left:6px}
+.share-button{padding:9px 0;transition:opacity .2s ease,transform .2s ease}
+.share-button:hover{opacity:.8;transform:translateY(-2px)}
+
+/* Better light-theme contrast for premium cards */
+html[data-theme=light] .service-card,
+html[data-theme=light] .contact-card{background:rgba(255,255,255,.82);border-color:rgba(21,40,60,.12);box-shadow:0 12px 34px rgba(25,46,68,.08)}
+html[data-theme=light] .skills-panel{box-shadow:0 18px 45px rgba(25,46,68,.08)}
+html[data-theme=light] .skill-track{background:#e7edf2}
+
+/* Small polish */
+.hero .btn,.contact-action,.map-link,.service-card{-webkit-tap-highlight-color:transparent}
+.icon-btn:focus-visible,.btn:focus-visible,.navlinks a:focus-visible,.text-link:focus-visible,.map-link:focus-visible,.contact-action:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:1100px){
+  .navlinks{gap:12px}
+  .navlinks a{font-size:10px;letter-spacing:1.15px}
 }
+
+@media(max-width:1000px){
+  .skills-panel{grid-template-columns:1fr 1fr;gap:21px 28px}
+}
+
+@media(max-width:700px){
+  html{scroll-padding-top:72px}
+  .navlinks a::after{display:none}
+  .print-link{margin-left:0;margin-top:14px;display:flex}
+  .experience-heading{display:block}
+  .experience-item{grid-template-columns:52px 1fr;gap:15px;padding:24px 0}
+  .experience-item:hover{padding-left:10px}
+  .experience-number{font-size:25px}
+  .experience-item h3{font-size:21px}
+  .skills-panel{grid-template-columns:1fr;padding:24px;gap:22px;border-radius:14px}
+  .skills-section::before{width:280px;height:280px;right:-150px;top:-100px}
+}
+
+/* ---------------- PRINT / SAVE PDF ---------------- */
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface2:#f5f5f5;--text:#111;--muted:#555;--line:#ddd;--gold:#9b6b25}
+  .topbar,.hero-glow,.hero-bottom,.trust-bar,.statement,.modal-overlay,.navtools,.actions,.share-button,.footnote{display:none!important}
+  body{background:#fff!important;color:#111!important}
+  .wrap{width:94%!important}
+  .hero{background:#fff!important;color:#111!important;overflow:visible}
+  .hero-grid{min-height:auto!important;grid-template-columns:1fr!important}
+  .hero-copy{padding:32px 0!important}
+  .hero h1{color:#111!important;font-size:48px!important}
+  .hero-description,.hero-metrics span{color:#555!important}
+  .hero-visual{display:none!important}
+  .section{padding-top:36px!important;padding-bottom:36px!important}
+  .about-grid{grid-template-columns:.7fr 1.6fr 1fr!important;gap:24px!important}
+  .skills-section,.services{background:#fff!important}
+  .skills-panel,.service-card,.contact-card,.map-link{box-shadow:none!important;background:#fff!important;border-color:#ccc!important}
+  .experience-item{break-inside:avoid}
+  .service-grid{grid-template-columns:repeat(3,1fr)!important}
+  footer{padding:20px 0!important}
+  a{text-decoration:none!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .skill-track span{animation:none}
+  .experience-item,.service-card,.contact-card,.map-link{transition:none}
+}
+
+/* ---------------- RECRUITER QUICK FACTS ---------------- */
+.availability-pill{display:inline-flex;align-items:center;gap:8px;margin-top:4px;padding:7px 11px;border:1px solid #ffffff24;border-radius:999px;background:#0d1824a8;color:#dbe7f1;font-size:10px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
+.availability-pill .live-dot{margin:0;width:7px;height:7px}
+.quick-facts{border-bottom:1px solid var(--line);background:var(--bg)}
+.quick-facts-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.quick-facts article{min-height:145px;padding:28px 24px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.quick-facts article:first-child{border-left:1px solid var(--line)}
+.quick-facts span{font-size:9px;letter-spacing:2px;color:var(--gold);font-weight:900;margin-bottom:10px}
+.quick-facts strong{font:800 18px/1.3 'Outfit',sans-serif;color:var(--text)}
+.quick-facts small{margin-top:7px;color:var(--muted);font-size:10px;line-height:1.45}
+
+/* ---------------- QUICK CONTACT FORM ---------------- */
+.inquiry-form{display:grid;gap:11px;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.inquiry-form input,.inquiry-form textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:9px;padding:13px 14px;outline:none;resize:vertical}
+.inquiry-form input:focus,.inquiry-form textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(234,193,139,.1)}
+.inquiry-form input::placeholder,.inquiry-form textarea::placeholder{color:var(--muted)}
+.inquiry-submit{margin-top:2px;width:100%}
+
+/* ---------------- FLOATING CONTACT ---------------- */
+.floating-contact{position:fixed;right:18px;bottom:18px;z-index:28;display:grid;gap:9px}
+.float-action{min-width:52px;height:52px;padding:0 15px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:9px;color:#fff;box-shadow:0 12px 35px #0007;font-size:11px;font-weight:900;letter-spacing:.4px;transition:transform .2s ease,box-shadow .2s ease}
+.float-action:hover{transform:translateY(-3px);box-shadow:0 16px 38px #0008}
+.float-action.whatsapp{background:#158f55}
+.float-action.call{background:linear-gradient(135deg,#d4af37,#aa820a);color:#151515}
+
+@media(max-width:900px){
+  .quick-facts-grid{grid-template-columns:repeat(2,1fr)}
+  .quick-facts article:nth-child(3){border-left:1px solid var(--line)}
+  .quick-facts article{border-bottom:1px solid var(--line)}
+}
+
+@media(max-width:700px){
+  .availability-pill{font-size:9px;max-width:100%;white-space:normal}
+  .quick-facts-grid{grid-template-columns:1fr 1fr}
+  .quick-facts article{min-height:125px;padding:20px 15px}
+  .quick-facts strong{font-size:15px}
+  .floating-contact{right:12px;bottom:12px}
+  .float-action{width:49px;min-width:49px;height:49px;padding:0;border-radius:50%}
+  .float-action span{display:none}
+}
+
+@media print{
+  .quick-facts{background:#fff!important}
+  .quick-facts-grid{grid-template-columns:repeat(4,1fr)!important}
+  .quick-facts article{min-height:auto!important;padding:16px!important}
+  .floating-contact,.inquiry-form,.availability-pill{display:none!important}
+}
+
